@@ -42,10 +42,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="chromeButton" destination="jes-Kq-oHf" id="1qa-qv-VzI"/>
-                        <outlet property="playstationButton" destination="yUM-A8-iNJ" id="o7q-TY-GAv"/>
-                        <outlet property="powerButton" destination="dNJ-pN-9da" id="A7j-2P-2cA"/>
-                        <outlet property="spotifyButton" destination="8kS-IW-jIn" id="iv9-a4-U9B"/>
+                        <outletCollection property="buttons" destination="dNJ-pN-9da" collectionClass="NSMutableArray" id="bUd-wi-SPI"/>
+                        <outletCollection property="buttons" destination="jes-Kq-oHf" collectionClass="NSMutableArray" id="KR0-8d-oWa"/>
+                        <outletCollection property="buttons" destination="yUM-A8-iNJ" collectionClass="NSMutableArray" id="4ou-uU-o4c"/>
+                        <outletCollection property="buttons" destination="8kS-IW-jIn" collectionClass="NSMutableArray" id="Plo-cd-zAF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
