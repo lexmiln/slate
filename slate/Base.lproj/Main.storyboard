@@ -16,21 +16,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Still working?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihA-nB-NYc">
-                                <rect key="frame" x="110" y="273" width="101" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNJ-pN-9da">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                <state key="normal" image="button-power"/>
+                                <state key="selected" image="button-power-on"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jes-Kq-oHf">
+                                <rect key="frame" x="80" y="0.0" width="80" height="80"/>
+                                <state key="normal" image="button-chromebox"/>
+                                <state key="selected" image="button-chromebox-on"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kS-IW-jIn">
+                                <rect key="frame" x="240" y="0.0" width="80" height="80"/>
+                                <state key="normal" image="button-spotify"/>
+                                <state key="selected" image="button-spotify-on"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUM-A8-iNJ">
+                                <rect key="frame" x="160" y="0.0" width="80" height="80"/>
+                                <state key="normal" image="button-playstation"/>
+                                <state key="selected" image="button-playstation-on"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="chromeButton" destination="jes-Kq-oHf" id="1qa-qv-VzI"/>
+                        <outlet property="playstationButton" destination="yUM-A8-iNJ" id="o7q-TY-GAv"/>
+                        <outlet property="powerButton" destination="dNJ-pN-9da" id="A7j-2P-2cA"/>
+                        <outlet property="spotifyButton" destination="8kS-IW-jIn" id="iv9-a4-U9B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="292"/>
+            <point key="canvasLocation" x="856" y="286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button-chromebox" width="49" height="49"/>
+        <image name="button-chromebox-on" width="49" height="49"/>
+        <image name="button-playstation" width="49" height="49"/>
+        <image name="button-playstation-on" width="49" height="49"/>
+        <image name="button-power" width="49" height="49"/>
+        <image name="button-power-on" width="49" height="49"/>
+        <image name="button-spotify" width="49" height="49"/>
+        <image name="button-spotify-on" width="49" height="49"/>
+    </resources>
 </document>
