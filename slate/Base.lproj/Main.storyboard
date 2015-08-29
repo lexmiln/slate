@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -36,12 +37,91 @@
                                 <state key="normal" image="button-playstation"/>
                                 <state key="selected" image="button-playstation-on"/>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Eri-IJ-DT8">
+                                <rect key="frame" x="40" y="88" width="280" height="180"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="iyM-dN-3fy"/>
+                                    <constraint firstAttribute="height" constant="180" id="tpR-ok-FuX"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="wUd-9P-W07">
+                                    <size key="itemSize" width="35" height="180"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="temperature" id="xXd-t5-vR8" customClass="TemperatureCollectionViewCell" customModule="slate" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="180"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="35" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNZ-gp-aN9">
+                                                    <rect key="frame" x="0.0" y="20" width="35" height="140"/>
+                                                    <color key="backgroundColor" red="1" green="0.96449750966568415" blue="0.6422935988510361" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="44" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhX-HY-kR4" userLabel="High">
+                                                    <rect key="frame" x="8" y="0.0" width="19" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="dtr-oA-hjG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zi5-Cf-To2" userLabel="Low">
+                                                    <rect key="frame" x="9" y="160" width="19" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Dfy-Xe-zJY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Zi5-Cf-To2" firstAttribute="centerX" secondItem="xXd-t5-vR8" secondAttribute="centerX" id="35q-ze-fD1"/>
+                                            <constraint firstItem="Zi5-Cf-To2" firstAttribute="top" secondItem="bNZ-gp-aN9" secondAttribute="bottom" id="DiN-Ud-nCR"/>
+                                            <constraint firstItem="WhX-HY-kR4" firstAttribute="width" secondItem="xXd-t5-vR8" secondAttribute="width" id="L50-1b-j98"/>
+                                            <constraint firstAttribute="bottom" secondItem="bNZ-gp-aN9" secondAttribute="bottom" constant="20" id="WIh-qk-vqp"/>
+                                            <constraint firstItem="WhX-HY-kR4" firstAttribute="centerX" secondItem="xXd-t5-vR8" secondAttribute="centerX" id="Yr2-lK-sKz"/>
+                                            <constraint firstAttribute="bottom" secondItem="bNZ-gp-aN9" secondAttribute="top" constant="160" id="hUz-xQ-LZs"/>
+                                            <constraint firstItem="bNZ-gp-aN9" firstAttribute="centerX" secondItem="xXd-t5-vR8" secondAttribute="centerX" id="ovC-FC-wUP"/>
+                                            <constraint firstItem="bNZ-gp-aN9" firstAttribute="top" secondItem="WhX-HY-kR4" secondAttribute="bottom" id="sfb-ao-dCD"/>
+                                            <constraint firstItem="bNZ-gp-aN9" firstAttribute="width" secondItem="xXd-t5-vR8" secondAttribute="width" id="td1-DK-nqp"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="L50-1b-j98"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="highConstraint" destination="hUz-xQ-LZs" id="eHe-2x-YA7"/>
+                                            <outlet property="highLabel" destination="WhX-HY-kR4" id="Qjk-Mq-kDI"/>
+                                            <outlet property="lowConstraint" destination="WIh-qk-vqp" id="2Rk-MM-Yua"/>
+                                            <outlet property="lowLabel" destination="Zi5-Cf-To2" id="BR0-Tj-NDt"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="BCq-o4-As6"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Eri-IJ-DT8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="43l-LV-ORP"/>
+                            <constraint firstItem="Eri-IJ-DT8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="88" id="tAq-hN-sMi"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="weatherCollectionView" destination="Eri-IJ-DT8" id="yky-Js-Fsd"/>
                         <outletCollection property="buttons" destination="dNJ-pN-9da" collectionClass="NSMutableArray" id="bUd-wi-SPI"/>
                         <outletCollection property="buttons" destination="jes-Kq-oHf" collectionClass="NSMutableArray" id="KR0-8d-oWa"/>
                         <outletCollection property="buttons" destination="yUM-A8-iNJ" collectionClass="NSMutableArray" id="4ou-uU-o4c"/>

@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  slate
@@ -8,14 +9,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet var buttons: Array<UIButton>!
+    @IBOutlet var weatherCollectionView: UICollectionView!
+    
+    var weather: Weather = Weather()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         for button in buttons {
             button.addTarget(self, action: "buttonPressed:", forControlEvents: UIControlEvents.PrimaryActionTriggered)
         }
+        
+        Data.weather(onWeather)
     }
     
     func buttonPressed(sender: UIView) {
@@ -25,7 +31,7 @@ class ViewController: UIViewController {
         }
     }
 
-    func listen() {
+    func listenForCommand() {
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let request = app.apiAI.requestWithType(.Voice)
         request.setCompletionBlockSuccess({ (request, response) -> Void in
@@ -36,6 +42,24 @@ class ViewController: UIViewController {
         app.apiAI.enqueue(request)
     }
     
+    func onWeather(weather: Weather) {
+        self.weather = weather
+        weatherCollectionView.reloadData()
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1;
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return weather.daily.count;
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("temperature", forIndexPath: indexPath) as! TemperatureCollectionViewCell
+        cell.configure(weather, day: weather.daily[indexPath.row], height: weatherCollectionView.frame.height)
+        return cell
+    }
 
 }
 

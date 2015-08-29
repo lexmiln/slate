@@ -80,3 +80,16 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/Alamofire.framework"
+  install_framework "Pods/ApiAI.framework"
+  install_framework "Pods/JSONJoy.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/Alamofire.framework"
+  install_framework "Pods/ApiAI.framework"
+  install_framework "Pods/JSONJoy.framework"
+fi

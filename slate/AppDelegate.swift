@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import ApiAI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

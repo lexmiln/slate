@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ApiAI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JSONJoy-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>52B0D486BE0274809CAF088A17CA5BA4</key>
+		<key>8C441391EB127C5E6A82177663A766F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66682A3A7A3BCD63013B344BFAD2CEA8</key>
+		<key>B9404B208DF54A36C2579747FC750412</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF0039F8A0F0E5CC56CCB06286DF94D8</key>
+		<key>DE95F36E579BA88A5459E05950923C63</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F89B4E4B61001D500E26F45B7226A394</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC354120CD9E605F92F370729826B3B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
