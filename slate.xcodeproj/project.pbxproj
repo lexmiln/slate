@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		463EF04F843A6C78C6B062F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AC5DC59E92402B5B6F0A50 /* libPods.a */; };
 		FA37E5E11B9204EB003CE146 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA37E5E01B9204EB003CE146 /* AVFoundation.framework */; };
-		FA37E5E71B923CFF003CE146 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA37E5E61B923CFF003CE146 /* Media.xcassets */; settings = {ASSET_TAGS = (); }; };
 		FA9CE29B1B91FD560017C54E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE29A1B91FD560017C54E /* AppDelegate.swift */; };
 		FA9CE29D1B91FD560017C54E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE29C1B91FD560017C54E /* ViewController.swift */; };
 		FA9CE2A01B91FD560017C54E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9CE29E1B91FD560017C54E /* Main.storyboard */; };
@@ -42,7 +41,6 @@
 		C6AC5DC59E92402B5B6F0A50 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA37E5E01B9204EB003CE146 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FA37E5E21B9207C0003CE146 /* slate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "slate-Bridging-Header.h"; sourceTree = "<group>"; };
-		FA37E5E61B923CFF003CE146 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		FA9CE2971B91FD560017C54E /* slate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9CE29A1B91FD560017C54E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9CE29C1B91FD560017C54E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 				FA9CE2A31B91FD560017C54E /* LaunchScreen.storyboard */,
 				FA9CE2A61B91FD560017C54E /* Info.plist */,
 				FA37E5E21B9207C0003CE146 /* slate-Bridging-Header.h */,
-				FA37E5E61B923CFF003CE146 /* Media.xcassets */,
 			);
 			path = slate;
 			sourceTree = "<group>";
@@ -267,7 +264,6 @@
 			files = (
 				FA9CE2A51B91FD560017C54E /* LaunchScreen.storyboard in Resources */,
 				FA9CE2A21B91FD560017C54E /* Assets.xcassets in Resources */,
-				FA37E5E71B923CFF003CE146 /* Media.xcassets in Resources */,
 				FA9CE2A01B91FD560017C54E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
