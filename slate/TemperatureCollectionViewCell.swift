@@ -19,13 +19,13 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
     func configure(weather: Weather, day: Day, height: CGFloat) {
         highLabel.text = String(day.max)
         lowLabel.text = String(day.min)
-        
-        let travel = height - TemperatureCollectionViewCell.GUTTER_SIZE * 2
-        let pointsPerDegree = travel / CGFloat(weather.max - weather.min)
-        let bottomDistance = TemperatureCollectionViewCell.GUTTER_SIZE + (pointsPerDegree * CGFloat(day.min - weather.min))
-        let topDistance = TemperatureCollectionViewCell.GUTTER_SIZE + (pointsPerDegree * CGFloat(day.max - weather.min))
-        
-        highConstraint.constant = topDistance
-        lowConstraint.constant = bottomDistance
+        highConstraint.constant = TemperatureCollectionViewCell.calculateOffset(day.max, min: weather.min, max: weather.max, height: height)
+        lowConstraint.constant = TemperatureCollectionViewCell.calculateOffset(day.min, min: weather.min, max: weather.max, height: height)
+    }
+    
+    static func calculateOffset(temp: Int, min: Int, max: Int, height: CGFloat) -> CGFloat {
+        let travel = height - TemperatureCollectionViewCell.GUTTER_SIZE*2
+        let pointsPerDegree = travel / CGFloat(max - min)
+        return TemperatureCollectionViewCell.GUTTER_SIZE + (pointsPerDegree * CGFloat(temp - min))
     }
 }

@@ -12,6 +12,8 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet var buttons: Array<UIButton>!
     @IBOutlet var weatherCollectionView: UICollectionView!
+    @IBOutlet var currentTemperatureLineOffset: NSLayoutConstraint!
+    @IBOutlet var currentTemperatureLabel: UILabel!
     
     var weather: Weather = Weather()
     
@@ -45,6 +47,11 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     func onWeather(weather: Weather) {
         self.weather = weather
         weatherCollectionView.reloadData()
+        currentTemperatureLabel.text = String(format:"%i°", weather.current)
+        currentTemperatureLineOffset.constant = TemperatureCollectionViewCell.calculateOffset(weather.current,
+            min: weather.min,
+            max: weather.max,
+            height: weatherCollectionView.frame.height)
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
