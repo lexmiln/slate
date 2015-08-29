@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		463EF04F843A6C78C6B062F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AC5DC59E92402B5B6F0A50 /* libPods.a */; };
+		FA37E5E11B9204EB003CE146 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA37E5E01B9204EB003CE146 /* AVFoundation.framework */; };
 		FA9CE29B1B91FD560017C54E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE29A1B91FD560017C54E /* AppDelegate.swift */; };
 		FA9CE29D1B91FD560017C54E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE29C1B91FD560017C54E /* ViewController.swift */; };
 		FA9CE2A01B91FD560017C54E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9CE29E1B91FD560017C54E /* Main.storyboard */; };
@@ -38,6 +39,8 @@
 		7DFF7C990BD7FE9ECFF0A01E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9AA95E23041B091A6B844B18 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C6AC5DC59E92402B5B6F0A50 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA37E5E01B9204EB003CE146 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FA37E5E21B9207C0003CE146 /* slate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "slate-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA9CE2971B91FD560017C54E /* slate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9CE29A1B91FD560017C54E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9CE29C1B91FD560017C54E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA37E5E11B9204EB003CE146 /* AVFoundation.framework in Frameworks */,
 				463EF04F843A6C78C6B062F8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +86,7 @@
 		9929BBBF1B30E4699C8AC368 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA37E5E01B9204EB003CE146 /* AVFoundation.framework */,
 				C6AC5DC59E92402B5B6F0A50 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -118,6 +123,7 @@
 				FA9CE2A11B91FD560017C54E /* Assets.xcassets */,
 				FA9CE2A31B91FD560017C54E /* LaunchScreen.storyboard */,
 				FA9CE2A61B91FD560017C54E /* Info.plist */,
+				FA37E5E21B9207C0003CE146 /* slate-Bridging-Header.h */,
 			);
 			path = slate;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 		FA9CE28F1B91FD560017C54E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = x13N;
 				TargetAttributes = {
@@ -472,10 +479,13 @@
 			baseConfigurationReference = 9AA95E23041B091A6B844B18 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = slate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.x13n.slate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "slate/slate-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -484,10 +494,12 @@
 			baseConfigurationReference = 7DFF7C990BD7FE9ECFF0A01E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = slate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.x13n.slate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "slate/slate-Bridging-Header.h";
 			};
 			name = Release;
 		};

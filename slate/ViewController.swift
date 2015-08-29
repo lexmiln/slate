@@ -20,6 +20,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func listen() {
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let request = app.apiAI.requestWithType(.Voice)
+        request.setCompletionBlockSuccess({ (request, response) -> Void in
+            print("Success", response)
+            }) { (request, error) -> Void in
+                print("Error", error)
+        }
+        app.apiAI.enqueue(request)
+    }
+    
 
 }
 
