@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet var buttons: Array<UIButton>!
@@ -31,18 +32,14 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         timeFormat.setLocalizedDateFormatFromTemplate("HH:mm")
         updateTime()
         updateWeather()
-    }
-    
-    override func isBeingPresented() -> Bool {
+
         timeTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateTime", userInfo: nil, repeats: true)
         weatherTimer = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "updateWeather", userInfo: nil, repeats: true)
-        return super.isBeingPresented()
     }
     
-    override func isBeingDismissed() -> Bool {
+    deinit {
         timeTimer?.invalidate()
         weatherTimer?.invalidate()
-        return super.isBeingDismissed()
     }
     
     func buttonPressed(sender: UIView) {
@@ -50,6 +47,13 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         for button in buttons {
             button.selected = button == sender
         }
+        
+        if let command = sender.valueForKey("command") as! String? {
+            Alamofire.request(Alamofire.Method.GET, Constants.SERVER + "do/" + command).response(completionHandler: { (_, _, _, _) -> Void in
+                print("Command sent")
+            })
+        }
+    
     }
 
     func listenForCommand() {
@@ -97,6 +101,14 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("temperature", forIndexPath: indexPath) as! TemperatureCollectionViewCell
         cell.configure(weather, day: weather.daily[indexPath.row], height: weatherCollectionView.frame.height)
         return cell
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return true;
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.All
     }
 
 }

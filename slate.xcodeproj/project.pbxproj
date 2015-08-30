@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8119040191C70A08D744DDBB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4863A42FF047BBD76FD7145B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FA0283EC1B928EDB00EB54EB /* CommandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0283EB1B928EDB00EB54EB /* CommandButton.swift */; settings = {ASSET_TAGS = (); }; };
 		FA37E5E11B9204EB003CE146 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA37E5E01B9204EB003CE146 /* AVFoundation.framework */; };
 		FA5875261B924EB300E8FB03 /* TemperatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5875251B924EB300E8FB03 /* TemperatureCollectionViewCell.swift */; };
 		FA5875281B92616000E8FB03 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5875271B92616000E8FB03 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
@@ -43,6 +44,7 @@
 		4863A42FF047BBD76FD7145B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFF7C990BD7FE9ECFF0A01E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9AA95E23041B091A6B844B18 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FA0283EB1B928EDB00EB54EB /* CommandButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandButton.swift; sourceTree = "<group>"; };
 		FA37E5E01B9204EB003CE146 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FA37E5E21B9207C0003CE146 /* slate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "slate-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA5875251B924EB300E8FB03 /* TemperatureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				FA5875271B92616000E8FB03 /* Constants.swift */,
 				FA5875291B92618D00E8FB03 /* Data.swift */,
 				FA58752B1B9261B900E8FB03 /* Weather.swift */,
+				FA0283EB1B928EDB00EB54EB /* CommandButton.swift */,
 			);
 			path = slate;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				FA9CE29B1B91FD560017C54E /* AppDelegate.swift in Sources */,
 				FA58752C1B9261B900E8FB03 /* Weather.swift in Sources */,
 				FA5875281B92616000E8FB03 /* Constants.swift in Sources */,
+				FA0283EC1B928EDB00EB54EB /* CommandButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

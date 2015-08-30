@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  CommandButton.swift
 //  slate
 //
 //  Created by Alex Macmillan on 29/08/2015.
@@ -8,6 +8,8 @@
 
 import UIKit
 
-class Constants {
-    static let SERVER = "http://192.168.0.4:5000/"
+class CommandButton: UIButton {
+
+    var command: String?
+
 }
