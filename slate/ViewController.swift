@@ -17,9 +17,10 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet var timeLabel: UILabel!
     
     let timeFormat = NSDateFormatter()
+    var weather: Weather = Weather()
     
     var timeTimer: NSTimer?
-    var weather: Weather = Weather()
+    var weatherTimer: NSTimer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,19 +28,20 @@ class ViewController: UIViewController, UICollectionViewDataSource {
             button.addTarget(self, action: "buttonPressed:", forControlEvents: UIControlEvents.PrimaryActionTriggered)
         }
         
-        Data.weather(onWeather)
-        
         timeFormat.setLocalizedDateFormatFromTemplate("HH:mm")
         updateTime()
+        updateWeather()
     }
     
     override func isBeingPresented() -> Bool {
         timeTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateTime", userInfo: nil, repeats: true)
+        weatherTimer = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "updateWeather", userInfo: nil, repeats: true)
         return super.isBeingPresented()
     }
     
     override func isBeingDismissed() -> Bool {
         timeTimer?.invalidate()
+        weatherTimer?.invalidate()
         return super.isBeingDismissed()
     }
     
@@ -63,6 +65,10 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     
     func updateTime() {
         timeLabel.text = timeFormat.stringFromDate(NSDate())
+    }
+    
+    func updateWeather() {
+        Data.weather(onWeather)
     }
     
     func onWeather(weather: Weather) {
