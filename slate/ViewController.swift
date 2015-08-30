@@ -30,8 +30,12 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         Data.weather(onWeather)
         
         timeFormat.setLocalizedDateFormatFromTemplate("HH:mm")
-        timeTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateTime", userInfo: nil, repeats: true)
         updateTime()
+    }
+    
+    override func isBeingPresented() -> Bool {
+        timeTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateTime", userInfo: nil, repeats: true)
+        return super.isBeingPresented()
     }
     
     override func isBeingDismissed() -> Bool {
