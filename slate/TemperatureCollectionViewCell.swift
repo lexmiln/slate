@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SwiftColors
 
 class TemperatureCollectionViewCell: UICollectionViewCell {
     @IBOutlet var highLabel: UILabel!
     @IBOutlet var lowLabel: UILabel!
     @IBOutlet var highConstraint: NSLayoutConstraint!
     @IBOutlet var lowConstraint: NSLayoutConstraint!
+    @IBOutlet var barView: UIView!
     
     static let GUTTER_SIZE: CGFloat = 20.0
     
@@ -21,6 +23,7 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
         lowLabel.text = String(day.min)
         highConstraint.constant = TemperatureCollectionViewCell.calculateOffset(day.max, min: weather.min, max: weather.max, height: height)
         lowConstraint.constant = TemperatureCollectionViewCell.calculateOffset(day.min, min: weather.min, max: weather.max, height: height)
+        barView.backgroundColor = UIColor(hexString: day.colorString)
     }
     
     static func calculateOffset(temp: Int, min: Int, max: Int, height: CGFloat) -> CGFloat {

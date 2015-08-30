@@ -14,7 +14,11 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet var weatherCollectionView: UICollectionView!
     @IBOutlet var currentTemperatureLineOffset: NSLayoutConstraint!
     @IBOutlet var currentTemperatureLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
     
+    let timeFormat = NSDateFormatter()
+    
+    var timeTimer: NSTimer?
     var weather: Weather = Weather()
     
     override func viewDidLoad() {
@@ -24,6 +28,15 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         }
         
         Data.weather(onWeather)
+        
+        timeFormat.setLocalizedDateFormatFromTemplate("HH:mm")
+        timeTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateTime", userInfo: nil, repeats: true)
+        updateTime()
+    }
+    
+    override func isBeingDismissed() -> Bool {
+        timeTimer?.invalidate()
+        return super.isBeingDismissed()
     }
     
     func buttonPressed(sender: UIView) {
@@ -44,14 +57,22 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         app.apiAI.enqueue(request)
     }
     
+    func updateTime() {
+        timeLabel.text = timeFormat.stringFromDate(NSDate())
+    }
+    
     func onWeather(weather: Weather) {
         self.weather = weather
-        weatherCollectionView.reloadData()
-        currentTemperatureLabel.text = String(format:"%i°", weather.current)
-        currentTemperatureLineOffset.constant = TemperatureCollectionViewCell.calculateOffset(weather.current,
-            min: weather.min,
-            max: weather.max,
-            height: weatherCollectionView.frame.height)
+        
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.weatherCollectionView.reloadData()
+            self.currentTemperatureLabel.text = String(format:"%i°", weather.current)
+            self.currentTemperatureLineOffset.constant = TemperatureCollectionViewCell.calculateOffset(weather.current,
+                min: weather.min,
+                max: weather.max,
+                height: self.weatherCollectionView.frame.height)
+            self.view.layoutIfNeeded()
+        }
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

@@ -29,30 +29,40 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8C441391EB127C5E6A82177663A766F4</key>
+		<key>26EBA98D1BC1104CB24679EBF4C3D499</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9404B208DF54A36C2579747FC750412</key>
+		<key>27E9067CBC1AA886BFC5C919CBD47519</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DE95F36E579BA88A5459E05950923C63</key>
+		<key>2DD45BE32A1D5EE1052C69EDE33FA818</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F89B4E4B61001D500E26F45B7226A394</key>
+		<key>5395767C669DB83AFC8A75239C5063BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FC354120CD9E605F92F370729826B3B2</key>
+		<key>876572D0B4B0EE8938651E457C86FE88</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9BE21194E74CA553B282D5F73E3E447</key>
 		<dict>
 			<key>primary</key>
 			<true/>

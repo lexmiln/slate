@@ -34,12 +34,14 @@ PODS:
     - ApiAI/Default
   - CWLSynthesizeSingleton (1.0.0)
   - JSONJoy-Swift (0.9.2)
+  - SwiftColors (0.2.0)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift-2.0`)
   - ApiAI
   - JSONJoy-Swift (from `https://github.com/mpclarkson/JSONJoy-Swift.git`, branch
     `swift2`)
+  - SwiftColors (from `https://github.com/deemadden/SwiftColors.git`, branch `swift-2.0`)
 
 EXTERNAL SOURCES:
   Alamofire:
@@ -48,6 +50,9 @@ EXTERNAL SOURCES:
   JSONJoy-Swift:
     :branch: swift2
     :git: https://github.com/mpclarkson/JSONJoy-Swift.git
+  SwiftColors:
+    :branch: swift-2.0
+    :git: https://github.com/deemadden/SwiftColors.git
 
 CHECKOUT OPTIONS:
   Alamofire:
@@ -56,6 +61,9 @@ CHECKOUT OPTIONS:
   JSONJoy-Swift:
     :commit: 8ed8579e593cbb2ab8f3ff7c4d5c95f550fb496f
     :git: https://github.com/mpclarkson/JSONJoy-Swift.git
+  SwiftColors:
+    :commit: afb528c91fb868dbe1159f319715971904aa84f5
+    :git: https://github.com/deemadden/SwiftColors.git
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
@@ -63,5 +71,6 @@ SPEC CHECKSUMS:
   ApiAI: d25276f56bf1f5f6bbf76838f4493d2001d7ca6b
   CWLSynthesizeSingleton: 6ccef3170409e87bc9e49544efdc1ea7713c2849
   JSONJoy-Swift: d51bde1053047c623db602e778f068414dd788e4
+  SwiftColors: 2567199aba33f5c05ccbfc86ad646c0aebe80439
 
 COCOAPODS: 0.39.0.beta.3
