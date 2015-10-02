@@ -18,18 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        // Initialise audio session for Api.AI
-        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
-        try! AVAudioSession.sharedInstance().setActive(true)
-        
-        // Initialize Api.AI
-        let config = AIDefaultConfiguration()
-        config.baseURL = NSURL(string: "https://api.api.ai/v1")
-        config.clientAccessToken = "7de36fe3828048e7b71ecee7c4833fcb"
-        config.subscriptionKey = "82c16e62-75be-41be-a2b9-205c427ee775"
-        self.apiAI = ApiAI()
-        self.apiAI.configuration = config
-        
         return true
     }
 
