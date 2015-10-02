@@ -16,7 +16,7 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
     @IBOutlet var lowConstraint: NSLayoutConstraint!
     @IBOutlet var barView: UIView!
     
-    static let GUTTER_SIZE: CGFloat = 20.0
+    static let GUTTER_SIZE: CGFloat = 25.0
     
     func configure(weather: Weather, day: Day, height: CGFloat) {
         highLabel.text = String(day.max)

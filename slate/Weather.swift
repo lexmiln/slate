@@ -21,7 +21,7 @@ struct Weather: JSONJoy {
         min = decoder["min"].integer!
         
         if let days = decoder["daily"].array {
-            for dayDecoder in days {
+            for dayDecoder in days[0..<5] {
                 daily.append(Day(dayDecoder))
             }
         }

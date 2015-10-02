@@ -76,10 +76,23 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     }
     
     func onWeather(weather: Weather) {
+        let canUpdateCells = weather.daily.count == weatherCollectionView.numberOfItemsInSection(0)
         self.weather = weather
         
-        UIView.animateWithDuration(0.5) { () -> Void in
+        if !canUpdateCells {
             self.weatherCollectionView.reloadData()
+        }
+        
+        UIView.animateWithDuration(0.5) { () -> Void in
+            if canUpdateCells {
+                for i in 0..<self.weather.daily.count {
+                    let cell = self.weatherCollectionView.cellForItemAtIndexPath(NSIndexPath(forItem: i, inSection: 0)) as! TemperatureCollectionViewCell
+                    cell.configure(self.weather,
+                        day: self.weather.daily[i],
+                        height: self.weatherCollectionView.frame.height)
+                }
+            }
+            
             self.currentTemperatureLabel.text = String(format:"%i°", weather.current)
             self.currentTemperatureLineOffset.constant = TemperatureCollectionViewCell.calculateOffset(weather.current,
                 min: weather.min,
