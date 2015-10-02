@@ -9,5 +9,5 @@
 import UIKit
 
 class Constants {
-    static let SERVER = "http://192.168.0.4:5000/"
+    static let SERVER = "http://192.168.0.254:5000/"
 }
